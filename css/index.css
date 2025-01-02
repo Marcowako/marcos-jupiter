@@ -1,24 +1,33 @@
 header{
+    background-image: url('/img/chelsea game.jpg');
     font: size 5px;
-    background-color: aqua;
+    background-color: rgb(206, 219, 215);
+    background-size:cover;/*Ensure the image covers the entire backgroung*/
+    background-position: center;/*center the image*/
+    background-repeat: no-repeat;/*prevent the image from repeating*/
     font-style: italic;
-    color: rgb(11, 149, 29);
+    color: rgb(91, 149, 11);
     padding: 10px 0;
     text-align: center;
+    position: -webkit-sticky; /* For safari */
+    position:sticky;
+    top: 0;
+    z-index: 1000; /* Ensures the header stays on top of other content */
 
 }
 body{
-    background-color: rgb(173, 191, 202);
-    color: rgb(54, 54, 31);
+    background-color: rgb(110, 158, 188);
+    color: rgb(16, 113, 112);
     font-size: medium;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
+   /*background-image: url(img\chelsea-game.jpg);*/
 
 }
 h2{
     border-radius: 0cm;
-    color: rgb(57, 9, 105);
+    color: rgb(94, 79, 3);
     text-align: center;
 
 }
@@ -32,14 +41,16 @@ nav ul li{
 
 }
 nav ul li a{
-    color: blueviolet;
+    color: rgb(49, 43, 226);
     text-decoration: none;
+
 
 }
 
-section { padding: 20px;
+section {
+     padding: 20px;
      margin: 20px 0; 
-     background-color: #fff; 
+     background-color: #e7d9d9; 
      border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
 
@@ -61,4 +72,64 @@ img{
     height:auto;
     padding:10px 20px 30px 40px;
 }
-            
+.experience-container{
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    gap:20px; /* add space between iteams */
+}
+.experience-item { flex: 1 1 200px; /* Flex-grow, flex-shrink, and flex-basis */
+     background-color: #c9d0bb;
+      border: 1px solid #cccab0;
+       border-radius: 5px;
+        padding: 10px; 
+        box-shadow: 0 2px 4px rgba(209, 191, 191, 0.1);
+}   
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.job-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.job-date {
+    font-style:oblique;
+    color: #473434;
+}
+
+.job-description {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
+}
+.contact-container {
+    display: flex;
+    justify-content: center; /* Centers the items horizontally */
+    gap: 20px; /* Adds space between items */
+    padding: 20px; /* Adds padding around the container */
+}
+
+.contact-item {
+    background-color: #dfe8e1c0;
+    border: 3px solid #96d1a3;
+    border-radius: 1px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centers the text within each item */
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: #1b1bda;
+    font-size: 1.2em;
+}
+
+.contact-item a:hover {
+    color: #ff0000; /* Changes color on hover */
+}
