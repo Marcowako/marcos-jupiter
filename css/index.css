@@ -1,3 +1,6 @@
+/* Mobile  Styles first */
+/* Desktop Styles  second*/
+
 header{
     background-image: url('/img/chelsea game.jpg');
     font: size 5px;
@@ -52,7 +55,7 @@ section {
      margin: 20px 0; 
      background-color: #e7d9d9; 
      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
 
 footer { text-align: center;
          padding: 10px 0;
@@ -108,28 +111,71 @@ img{
     font-size: 1em;
     color: #333;
 }
-.contact-container {
+.connect-container {
     display: flex;
     justify-content: center; /* Centers the items horizontally */
-    gap: 20px; /* Adds space between items */
-    padding: 20px; /* Adds padding around the container */
+    gap: 10px; /* Adds space between items */
+    padding: 10px; /* Adds padding around the container */
 }
 
-.contact-item {
+.connect-item {
     background-color: #dfe8e1c0;
-    border: 3px solid #96d1a3;
+    border: 1px solid #96d1a3;
     border-radius: 1px;
     padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center; /* Centers the text within each item */
 }
 
-.contact-item a {
+.connect-item a {
     text-decoration: none;
     color: #1b1bda;
     font-size: 1.2em;
 }
 
-.contact-item a:hover {
+.connect-item a:hover {
     color: #ff0000; /* Changes color on hover */
+}
+/* Media Query for Mobile styles */
+@media (min-width: 480px) {
+    h1 { 
+        font-size: 2rem; /* make font-size smaller */
+         color: rgba(178, 26, 41, 0.744); /* Change 2 */
+         }
+          #navigation ul {
+             padding: 20px; /* Change 1 */
+             background-color: rgb(228, 101, 101); /* Change 2 */ 
+            } 
+             .name {
+                 font-size: 1.5rem; /* Change to the smaller font-size*/ 
+                font-style: italic; /* change to the font-style to style  */
+             }
+             /*.experience {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+              }*/
+            
+}
+
+/* Media Query for Desktop styles */
+@media( min-width: 1024px) {
+    h1 {
+         font-size: 2rem; /* Change to bigger font size */ 
+        color: darkblue; /* Change the color to darkblue */
+     }
+        ul {
+             padding: 8px; /* reduce padding  */
+             background-color: rgb(210, 219, 34); /* Change background color*/
+             } 
+             .name {
+                 font-size: 2.5rem; /* Change to bigger font-size   */
+                 font-style: italic; /* Change the font -style to italic */ 
+                } 
+                /*.experience {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                }*/
+                  
 }
