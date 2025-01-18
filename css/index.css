@@ -2,10 +2,10 @@
 /* Desktop Styles  second*/
 
 header{
-    background-image: url('/img/chelsea game.jpg');
-    font: size 5px;
+    background-image: url('/img/chelsea-game.jpg');
+    font-size: 5px;
     background-color: rgb(206, 219, 215);
-    background-size:cover;/*Ensure the image covers the entire backgroung*/
+    background-size:cover;/*Ensure the image covers the entire background*/
     background-position: center;/*center the image*/
     background-repeat: no-repeat;/*prevent the image from repeating*/
     font-style: italic;
@@ -25,7 +25,6 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
-   /*background-image: url(img\chelsea-game.jpg);*/
 
 }
 h2{
@@ -44,8 +43,9 @@ nav ul li{
 
 }
 nav ul li a{
-    color: rgb(49, 43, 226);
+    color: rgb(211, 43, 226);
     text-decoration: none;
+    font-size: 1rem;
 
 
 }
@@ -61,15 +61,10 @@ footer { text-align: center;
          padding: 10px 0;
           background-color: #1b0202; 
           color: #fff; }
-h2 connect{
-    padding:10, 0;
+.connect{
+    padding:10px 0;
     text-align: center;
 }   
-/*ul li a:hover {
-    color: rgb(170, 13, 13);
-    padding: 0%;
-    text-align: center;
-} */
 img{
     width:100px;
     height:auto;
@@ -150,13 +145,6 @@ img{
                  font-size: 1.5rem; /* Change to the smaller font-size*/ 
                 font-style: italic; /* change to the font-style to style  */
              }
-             /*.experience {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
-              }*/
-            
-}
 
 /* Media Query for Desktop styles */
 @media( min-width: 1024px) {
@@ -166,16 +154,10 @@ img{
      }
         ul {
              padding: 8px; /* reduce padding  */
-             background-color: rgb(210, 219, 34); /* Change background color*/
+             background-color: rgb(212, 216, 218); /* Change background color*/
              } 
              .name {
                  font-size: 2.5rem; /* Change to bigger font-size   */
                  font-style: italic; /* Change the font -style to italic */ 
-                } 
-                /*.experience {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    gap: 20px;
-                }*/
-                  
+                }                  
 }

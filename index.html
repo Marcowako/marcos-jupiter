@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcos's portfolio</title>
     <link href="css/index.css" rel ="stylesheet">
-    <link href="https://fonts.googleleapis.com/" rel="preconnect">
+    <link href="https://fonts.googleapis.com/" rel="preconnect">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
@@ -15,24 +15,24 @@
     <h1>Marcos's portfolio</h1> <!--Mobile  Styles first-->
     <nav>
         <ul>
-            <li><a href="#About">About</a></li>
-            <li><a href="#Experience">Experience</a></li>
-            <li><a href="#Skills">Skills</a></li>
-            <li><a href="#Projects">Projects</a></li> 
-            <li><a href="#connect">Connect </a></li>  
+            <li><a href="#about">about</a></li>
+            <li><a href="#experience">experience</a></li>
+            <li><a href="#skills">skills</a></li>
+            <li><a href="#projects">projects</a></li> 
+            <li><a href="#connect">connect </a></li>  
         </ul>
     </nav>
 </header>
 
-  <section id="About">
-    <h2>About </h2>
+  <section id="about">
+    <h2>about </h2>
     <img src="img/img.jpg" alt="Marcos's headshot" id="profile-picture">
   <p>I am an upcoming software engineer who wants to build applications that will change the world for better. I am an avid soccer player and fan, my favorite team is Chelsea. 
    <a href="https://www.google.com/search?gs_ssp=eJzj4tDP1TcwMk5LMmD0Yk_OSM0pTk0EADKJBZI&q=chelsea&oq=chel&gs_lcrp=EgZjaHJvbWUqDQgBEC4YgwEYsQMYgAQyBggAEEUYOTINCAEQLhiDARixAxiABDIMCAIQIxgnGIAEGIoFMhAIAxAuGK8BGMcBGIAEGI4FMhAIBBAuGK8BGMcBGIAEGI4FMhAIBRAAGIMBGLEDGIAEGIoFMgcIBhAAGIAEMgoIBxAuGLEDGIAEMgcICBAAGIAEMgcICRAAGI8C0gEINTUyOGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8">Chelsea Soccer Club.</a></p>It is one of the most successful clubs in the world.
   </section>
 
-  <section id="Experience"><!--Desktop Styles  second-->
-    <h2>Experience</h2>
+  <section id="experience"><!--Desktop Styles  second-->
+    <h2>experience</h2>
     <div class="experience-container">
         <div class="experience-item">
             <div class="job-header">
@@ -65,22 +65,21 @@
     </div>
 </section>
 
-  <section id="Skills">
-    <h2>Skills</h2>
+  <section id="skills">
+    <h2>skills</h2>
+    <ul id="skill-ul"></ul>
   </section>
 
-  <section id="Projects">
-    <h2>Projects</h2>
-    <ul>
-  
-    </ul>
+  <section id="projects">
+    <h2>projects</h2>
+    <ul></ul> <!--add skills using javascript-->
   </section>
 
-  <section id="Connect">
-  <h2>Connect</h2>
-  <div class="Connect-container">
+  <section id="connect">
+  <h2>connect</h2>
+  <div class="connect-container">
     <div class="connect-item">
-      <a href="https://www.facebook.com" target="blank"><i class="fab fa-facebook"></i>Facebook</a>
+      <a href="https://www.facebook.com" target="blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i>Facebook</a> <!--for security reasons -->
     </div>
     <div class="connect-item">
       <a href="mailto:marcowako@gmail.com"><i class="fas fa-envelope"></i>mail</a>
@@ -90,9 +89,6 @@
     </div>
   </div>
   </section>
- 
-  <footer>
-    <p>&copy; 2024 Marcos Msiska. All rights reserved.</p>
-  </footer>
+  <script src="js/index.js"></script>
 </body>
 </html>
