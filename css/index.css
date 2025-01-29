@@ -180,7 +180,7 @@ img{
   }
   
   /* Messages Section */
-  #messages ul {
+  .messages ul {
     list-style: none;
     padding: 0;
   }
@@ -195,7 +195,7 @@ img{
     background-color: #1085de;
   }
   
-  #messages button {
+  .messages button {
     background-color: #1cd58b;
     color: rgb(106, 230, 28);
     border: none;
@@ -204,7 +204,7 @@ img{
     cursor: pointer;
   }
   
-  #messages button:hover {
+  .messages button:hover {
     background-color: #c82333;
   }
   
@@ -219,7 +219,7 @@ img{
     }
   
     /* Messages - Change Layout to Side-by-Side */
-    #messages li {
+    .messages li {
       flex-direction: row;
       justify-content: space-between;
       padding: 15px;
@@ -249,7 +249,7 @@ img{
       margin: auto;
     }
   
-    #messages li {
+    .messages li {
       padding: 20px;
       font-size: 18px;
     }
@@ -310,7 +310,7 @@ form {
     padding: 0;
   }
   
-  #messages li {
+  .messages li {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -321,7 +321,7 @@ form {
     background-color: #f9f9f9;
   }
   
-  #messages button {
+  .messages button {
     background-color: #dc3545;
     color: white;
     border: none;
@@ -331,6 +331,6 @@ form {
     transition: background-color 0.3s ease;
   }
   
-  #messages button:hover {
+  .messages button:hover {
     background-color: #c82333;
   }
