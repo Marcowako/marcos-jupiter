@@ -7,7 +7,6 @@
     <link href="css/index.css" rel ="stylesheet">
     <link href="https://fonts.googleapis.com/" rel="preconnect">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
 
 <body>
@@ -19,7 +18,8 @@
             <li><a href="#experience">experience</a></li>
             <li><a href="#skills">skills</a></li>
             <li><a href="#projects">projects</a></li> 
-            <li><a href="#connect">connect </a></li>  
+            <li><a href="#connect">connect </a></li> 
+            <li><a href="#leave_message">leave a Message</a></li>
         </ul>
     </nav>
 </header>
@@ -89,6 +89,26 @@
     </div>
   </div>
   </section>
+  <section id ="leave_message">
+    <h2>Leave a Message </h2>
+    <form name="leave_message">
+      <label for="usersName">Name:</label><br>
+            <input type="text" name="usersName" id="usersName" required><br><br>
+
+            <label for="usersEmail">Email:</label><br>
+            <input type="email" name="usersEmail" id="usersEmail" required><br><br>
+
+            <label for="usersMessage">Message:</label><br>
+            <textarea name="usersMessage" id="usersMessage" required></textarea><br><br>
+
+            <button type="submit">Submit</button>
+    </form>
+  </section>
+  <section id="messages">
+    <h2>Messages</h2>
+    <ul></ul>
+  </section>
+  <footer></footer>
   <script src="js/index.js"></script>
 </body>
 </html>

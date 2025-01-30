@@ -1,10 +1,11 @@
 /* Mobile  Styles first */
-/* Desktop Styles  second*/
+/* Tablet Stayle Second */
+/* Desktop Styles  Third*/
 
 header{
     background-image: url('/img/chelsea-game.jpg');
     font-size: 5px;
-    background-color: rgb(206, 219, 215);
+    background-color: rgb(70, 197, 39);
     background-size:cover;/*Ensure the image covers the entire background*/
     background-position: center;/*center the image*/
     background-repeat: no-repeat;/*prevent the image from repeating*/
@@ -124,40 +125,212 @@ img{
 
 .connect-item a {
     text-decoration: none;
-    color: #1b1bda;
+    color: #a8a8da;
     font-size: 1.2em;
 }
 
 .connect-item a:hover {
     color: #ff0000; /* Changes color on hover */
 }
-/* Media Query for Mobile styles */
-@media (min-width: 480px) {
-    h1 { 
-        font-size: 2rem; /* make font-size smaller */
-         color: rgba(178, 26, 41, 0.744); /* Change 2 */
-         }
-          #navigation ul {
-             padding: 20px; /* Change 1 */
-             background-color: rgb(228, 101, 101); /* Change 2 */ 
-            } 
-             .name {
-                 font-size: 1.5rem; /* Change to the smaller font-size*/ 
-                font-style: italic; /* change to the font-style to style  */
-             }
 
-/* Media Query for Desktop styles */
-@media( min-width: 1024px) {
-    h1 {
-         font-size: 2rem; /* Change to bigger font size */ 
-        color: darkblue; /* Change the color to darkblue */
-     }
-        ul {
-             padding: 8px; /* reduce padding  */
-             background-color: rgb(212, 216, 218); /* Change background color*/
-             } 
-             .name {
-                 font-size: 2.5rem; /* Change to bigger font-size   */
-                 font-style: italic; /* Change the font -style to italic */ 
-                }                  
-}
+/* ==================== 
+   Global Styles (Mobile First)
+   ==================== */
+   body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header Styling */
+  header {
+    text-align: center;
+    padding: 20px;
+    background-color: #bde8e5;
+    color: white;
+  }
+  
+  /* Message Form */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 90%;
+    margin: auto;
+  }
+  
+  form input, form textarea, form button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  form button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Messages Section */
+  .messages ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #messages li {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #aec633;
+    border-radius: 5px;
+    background-color: #1085de;
+  }
+  
+  .messages button {
+    background-color: #1cd58b;
+    color: rgb(106, 230, 28);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .messages button:hover {
+    background-color: #c82333;
+  }
+  
+  /* ==================== 
+     Tablet Styles (Min: 600px)
+     ==================== */
+  @media (min-width: 600px) {
+    /* Header - Change Font Size and Padding */
+    header {
+      font-size: 22px;
+      padding: 30px;
+    }
+  
+    /* Messages - Change Layout to Side-by-Side */
+    .messages li {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 15px;
+    }
+  
+    /* Form Inputs - Increase Padding and Font Size */
+    form input, form textarea, form button {
+      padding: 12px;
+      font-size: 1.1rem;
+    }
+  }
+  
+  /* ==================== 
+     Desktop Styles (Min: 1024px)
+     ==================== */
+  @media (min-width: 1024px) {
+    /* Header - Change Background Color and Center Text */
+    header {
+      background-color: #0056b3;
+      text-align: left;
+      padding-left: 50px;
+    }
+  
+    /* Messages - Increase Width and Adjust Margins */
+    #messages ul {
+      max-width: 800px;
+      margin: auto;
+    }
+  
+    .messages li {
+      padding: 20px;
+      font-size: 18px;
+    }
+  
+    /* Form - Increase Width */
+    form {
+      max-width: 600px;
+    }
+  }
+  
+  /* ==================== 
+     Grid Layout for "Experience" Section
+     ==================== */
+  .experience {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .experience div {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+/* Style the form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  form input, form textarea, form button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  form button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style the messages section */
+  #messages ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .messages li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .messages button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .messages button:hover {
+    background-color: #c82333;
+  }
