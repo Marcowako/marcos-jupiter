@@ -68,3 +68,42 @@ messageForm.addEventListener('submit', function (event) {
   // Reset the form
   messageForm.reset();
 });
+
+// Fetch GitHub repositories
+const GITHUB_USERNAME = 'Marcowako';
+const apiURL= `https://api.github.com/users/${GITHUB_USERNAME}/repos`;
+  
+fetch(apiURL)
+.then(response => {
+    if (response.ok) {
+      return response.text();
+    }else{
+      throw new Error("Failed to fetch repositories");
+    }
+  })
+  .then((data)=>{
+    const repositories =JSON.parse(data);
+    console.log(repositories);
+
+    //Dom selection to select the project section by id
+    const projectSection = document.getElementById("projects");
+    
+    //create ul in the projects section
+    let projectList  = document.createElement("ul");
+    projectSection.appendChild(projectList);
+
+    for(let repository of repositories){
+      // Create a new list item element
+      let project = document.createElement("li");
+      project.innerText = repository.name;
+      projectList.appendChild(project);
+    }
+  })
+.catch((error)=> {
+  if(error instanceof SyntaxError){
+    console.error("unparsable response from server");
+  }else{
+    console.error("Error fetching data:", error.message);
+  }
+});
+  
