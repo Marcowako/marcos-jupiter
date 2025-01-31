@@ -78,44 +78,55 @@ fetch(apiURL)
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    return response.json(); // Properly return parsed JSON data
+    return response.json();
   })
-  .then((data) => {
-    console.log(data); // Debugging: Check the data structure
+  .then((repositories) => {  // Store response in `repositories` variable
+    console.log(repositories); // Debugging: Check the structure of the data
 
-    // Dom selection to select the project section by id
     const projectSection = document.getElementById("projects");
 
-    // Create ul in the projects section
-    let projectList  = document.createElement("ul");
-    projectSection.appendChild(projectList);
+    // Select the existing <ul> element inside the project section
+    let projectList = projectSection.querySelector("ul");
+    
+    if (!projectList) {
+      console.error("No <ul> found inside #projects section. Ensure your HTML has a <ul> inside #projects.");
+      return; // Exit if there's no <ul> in the HTML
+    }
 
-    for(let repository of data) { // Use 'data' instead of 'repositories'
-      // Create a new list item element
+    projectList.innerHTML = ""; // Clear existing content before adding new projects
+
+    if (repositories.length === 0) { 
+      let noProjectMessage = document.createElement("li");
+      noProjectMessage.textContent = "No repositories found for this user.";
+      projectList.appendChild(noProjectMessage);
+      return;
+    }
+
+    for (let repository of repositories) {  
       let project = document.createElement("li");
       project.innerText = repository.name;
       projectList.appendChild(project);
     }
   })
 .catch(error => {
-  console.error("Error fetching or processing data:", error); // Log the full error object for debugging
+  console.error("Error fetching or processing data:", error);
 
   const projectSection = document.getElementById("projects");
   let projectList = projectSection.querySelector("ul");
 
   if (!projectList) {
-    projectList = document.createElement("ul");
-    projectSection.appendChild(projectList);
-  } else {
-    projectList.innerHTML = ""; // Clear existing content
+    console.error("No <ul> found inside #projects section.");
+    return;
   }
 
-  const errorMessage = document.createElement('li');
+  projectList.innerHTML = ""; // Clear existing content
 
-  if (error.message.includes("JSON")) { // Check if the error message contains "JSON"
+  let errorMessage = document.createElement('li');
+
+  if (error.message.includes("JSON")) { 
       errorMessage.textContent = "Error loading projects: Invalid data received from server.";
   }
-  else if (error.message.includes("HTTP error")) { // Check if the error message contains "HTTP error"
+  else if (error.message.includes("HTTP error")) { 
       errorMessage.textContent = `Error loading projects: ${error.message}`;
   }
   else {
