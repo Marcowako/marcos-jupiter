@@ -68,3 +68,70 @@ messageForm.addEventListener('submit', function (event) {
   // Reset the form
   messageForm.reset();
 });
+
+// Fetch GitHub repositories
+const GITHUB_USERNAME = 'Marcowako';
+const apiURL= `https://api.github.com/users/${GITHUB_USERNAME}/repos`;
+  
+fetch(apiURL)
+.then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then((repositories) => {  // Store response in `repositories` variable
+    console.log(repositories); // Debugging: Check the structure of the data
+
+    const projectSection = document.getElementById("projects");
+
+    // Select the existing <ul> element inside the project section
+    let projectList = projectSection.querySelector("ul");
+    
+    if (!projectList) {
+      console.error("No <ul> found inside #projects section. Ensure your HTML has a <ul> inside #projects.");
+      return; // Exit if there's no <ul> in the HTML
+    }
+
+    projectList.innerHTML = ""; // Clear existing content before adding new projects
+
+    if (repositories.length === 0) { 
+      let noProjectMessage = document.createElement("li");
+      noProjectMessage.textContent = "No repositories found for this user.";
+      projectList.appendChild(noProjectMessage);
+      return;
+    }
+
+    for (let repository of repositories) {  
+      let project = document.createElement("li");
+      project.innerText = repository.name;
+      projectList.appendChild(project);
+    }
+  })
+.catch(error => {
+  console.error("Error fetching or processing data:", error);
+
+  const projectSection = document.getElementById("projects");
+  let projectList = projectSection.querySelector("ul");
+
+  if (!projectList) {
+    console.error("No <ul> found inside #projects section.");
+    return;
+  }
+
+  projectList.innerHTML = ""; // Clear existing content
+
+  let errorMessage = document.createElement('li');
+
+  if (error.message.includes("JSON")) { 
+      errorMessage.textContent = "Error loading projects: Invalid data received from server.";
+  }
+  else if (error.message.includes("HTTP error")) { 
+      errorMessage.textContent = `Error loading projects: ${error.message}`;
+  }
+  else {
+      errorMessage.textContent = "Error loading projects. Please try again later.";
+  }
+
+  projectList.appendChild(errorMessage);
+});
