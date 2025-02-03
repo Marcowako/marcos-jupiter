@@ -2,24 +2,23 @@
 /* Tablet Stayle Second */
 /* Desktop Styles  Third*/
 
-header{
+header {
 
-    font-size: 5px;
+    font-size: 20px;
     background-color: rgb(70, 197, 39);
     background-size:cover;/*Ensure the image covers the entire background*/
     background-position: center;/*center the image*/
     background-repeat: no-repeat;/*prevent the image from repeating*/
     font-style: italic;
-    color: rgb(91, 149, 11);
+    color: white; /*Higher contrast for better visibility*/
     padding: 10px 0;
     text-align: center;
-    position: -webkit-sticky; /* For safari */
     position:sticky;
     top: 0;
     z-index: 1000; /* Ensures the header stays on top of other content */
 
 }
-body{
+body {
     background-color: rgb(110, 158, 188);
     color: rgb(16, 113, 112);
     font-size: medium;
@@ -28,34 +27,41 @@ body{
     padding: 0;
 
 }
-h2{
-    border-radius: 0cm;
+h2 {
+  
     color: rgb(94, 79, 3);
     text-align: center;
 
 }
-nav ul{
+nav ul {
     list-style: none;
     padding: 0;
+    display: flex; /* Better structure*/
+    justify-content: center;
+    gap: 15px;/*spacing*/
 }
-nav ul li{
-    display: inline;
+nav ul li {
     margin: 0 10px;
 
 }
-nav ul li a{
-    color: rgb(211, 43, 226);
+nav ul li a {
+    color: #fff; /*Improved contrast */
     text-decoration: none;
     font-size: 1rem;
-
-
+    background-color: #6b2c91;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+nav ul li a:hover {
+  background-color: #4a1f6d;
 }
 
 section {
      padding: 20px;
      margin: 20px 0; 
      background-color: #e7d9d9; 
-     border-radius: 5px;
+     border-radius: 8px;
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
 
 footer { text-align: center;
@@ -73,16 +79,17 @@ img{
 }
 .experience-container{
     display: flex;
-    flex-direction:column;
     flex-wrap: wrap;
     gap:20px; /* add space between iteams */
+    justify-content: center; /* Center items */
 }
-.experience-item { flex: 1 1 200px; /* Flex-grow, flex-shrink, and flex-basis */
-     background-color: #c9d0bb;
-      border: 1px solid #cccab0;
-       border-radius: 5px;
-        padding: 10px; 
-        box-shadow: 0 2px 4px rgba(209, 191, 191, 0.1);
+.experience-item { 
+  flex: 1 1 200px; /* Flex-grow, flex-shrink, and flex-basis */
+  background-color: #e3e8dc;
+  border: 1px solid #b0bfa3;
+  border-radius: 8px;
+  padding: 15px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }   
 
 .job-header {
@@ -109,6 +116,7 @@ img{
 }
 .connect-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center; /* Centers the items horizontally */
     gap: 10px; /* Adds space between items */
     padding: 10px; /* Adds padding around the container */
@@ -120,13 +128,18 @@ img{
     border-radius: 1px;
     padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centers the text within each item */
+    transition: transform 0.2s ease-in-out; /*Smooth effect*/
+}
+
+.connect-item:hover {
+  transform: translateY(-3px); /* Subtle lift effect */
 }
 
 .connect-item a {
     text-decoration: none;
     color: #a8a8da;
     font-size: 1.2em;
+    font-weight: bold;
 }
 
 .connect-item a:hover {
@@ -136,22 +149,22 @@ img{
 /* ==================== 
    Global Styles (Mobile First)
    ==================== */
-   body {
+   /*body {
     font-family: Arial, sans-serif;
     font-size: 16px;
     background-color: #f4f4f4;
     color: #333;
     margin: 0;
     padding: 0;
-  }
+  }*/
   
   /* Header Styling */
-  header {
+  /*header {
     text-align: center;
     padding: 20px;
     background-color: #bde8e5;
     color: white;
-  }
+  }*/
   
   /* Message Form */
   form {
@@ -185,27 +198,29 @@ img{
     padding: 0;
   }
   
-  #messages li {
+  .messages li {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #aec633;
+    padding: 15px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #1085de;
+    background-color: #f9f9f9;
   }
   
   .messages button {
     background-color: #1cd58b;
-    color: rgb(106, 230, 28);
+    color: white;
     border: none;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 8px 12px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
   .messages button:hover {
-    background-color: #c82333;
+    background-color: #c8c823;
   }
   
   /* ==================== 
@@ -334,3 +349,32 @@ form {
   .messages button:hover {
     background-color: #c82333;
   }
+
+  @media (max-width: 768px) {
+    header {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .experience-container {
+        flex-direction: column;
+    }
+
+    .connect-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .messages li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+}

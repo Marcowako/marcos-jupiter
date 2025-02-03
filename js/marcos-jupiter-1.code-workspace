@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../CodeTheDream2024"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "marcos-jupiter-1"
+	}
+}
