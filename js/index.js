@@ -59,8 +59,27 @@ messageForm.addEventListener('submit', function (event) {
     entry.remove(); // Remove the parent element from the DOM
   });
 
+  // Create an edit button
+  const editButton = document.createElement('button');
+  editButton.type = 'button';
+  editButton.innerText = 'edit';
+
+  // Add an event listener to the edit button
+  editButton.addEventListener('click', function () {
+    const entry = editButton.parentNode; // Find the parent element
+    const messageSpan = entry.querySelector('span');
+    const originalMessage = messageSpan.textContent.replace(' says: ', '');
+    
+    // Prompt user to edit the message
+    const newMessage = prompt('Edit your message:', originalMessage);
+    if (newMessage) {
+      messageSpan.textContent = ` says: ${newMessage}`;
+    }
+  });
+
   // Append the remove button to the new message
   newMessage.appendChild(removeButton);
+  newMessage.appendChild(editButton);
 
   // Append the new message to the message list
   messageList.appendChild(newMessage);
